@@ -1,0 +1,2 @@
+git remote add origin https://github.com/DominikFrackowiak/TropicalParadise.git
+git push -u origin main
