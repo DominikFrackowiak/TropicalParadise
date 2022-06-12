@@ -92,7 +92,9 @@
   }
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   margin: 0;
@@ -141,10 +143,10 @@ body {
   position: absolute;
   right: 0;
   height: 3px;
-  content: "";
+  content: '';
   background-color: #fff;
-  -webkit-transition: width .3s;
-  transition: width .3s;
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
 }
 
 .burger-btn__bars {
@@ -159,8 +161,8 @@ body {
 .burger-btn__bars::after {
   top: 27px;
   width: 30%;
-  -webkit-transition-delay: .1s;
-          transition-delay: .1s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
 
 .nav {
@@ -181,10 +183,10 @@ body {
           transform: translateX(100%);
   background-image: linear-gradient(45deg, #1469f1, #2a0ab8);
   z-index: 100;
-  -webkit-transition: -webkit-transform .5;
-  transition: -webkit-transform .5;
-  transition: transform .5;
-  transition: transform .5, -webkit-transform .5;
+  -webkit-transition: -webkit-transform 0.5;
+  transition: -webkit-transform 0.5;
+  transition: transform 0.5;
+  transition: transform 0.5, -webkit-transform 0.5;
 }
 
 .nav--active {
@@ -203,7 +205,7 @@ body {
 }
 
 .nav__item::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -212,10 +214,10 @@ body {
   width: 3px;
   height: 100%;
   background-color: #fff;
-  -webkit-transition: -webkit-transform .3s;
-  transition: -webkit-transform .3s;
-  transition: transform .3s;
-  transition: transform .3s, -webkit-transform .3s;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .nav__item:hover::before {
@@ -277,7 +279,7 @@ body {
 }
 
 .header__heading {
-  font-family: "Dancing Script", cursive;
+  font-family: 'Dancing Script', cursive;
   font-size: 4.8rem;
   font-weight: 300;
 }
@@ -340,13 +342,144 @@ body {
 }
 
 .hero-img__title {
-  font-family: "Dancing Script", cursive;
+  font-family: 'Dancing Script', cursive;
   margin-bottom: 0.5em;
   font-size: 4.8rem;
 }
 
 .hero-img__text {
   padding: 1em 0;
+}
+
+.islands__card {
+  position: relative;
+  margin: 1em 0;
+  height: 450px;
+  color: #fff;
+  text-align: center;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+}
+
+.islands__card:hover .islands__card-img {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+  opacity: 0;
+}
+
+.islands__card:hover .islands__card-info {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+  opacity: 1;
+}
+
+.islands__card-img {
+  padding: 2em;
+  height: 100%;
+  border-radius: 8px;
+  background-size: cover;
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
+  transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
+}
+
+.islands__card-img--first {
+  background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.75), rgba(8, 24, 255, 0.75)), url("../img/boat-166738_640.jpg");
+}
+
+.islands__card-img--second {
+  background-image: linear-gradient(45deg, rgba(20, 105, 241, 0.75), rgba(42, 10, 184, 0.75)), url("../img/hawaii-79928_640.jpg");
+}
+
+.islands__card-img--third {
+  background-image: linear-gradient(45deg, rgba(190, 10, 214, 0.75), rgba(68, 0, 255, 0.75)), url("../img/water-3354063_640.jpg");
+}
+
+.islands__card-img-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.8rem;
+}
+
+.islands__card-img-info {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  font-size: 1.8rem;
+}
+
+.islands__card-img-info i {
+  margin-right: 0.3rem;
+}
+
+.islands__card-info {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: linear-gradient(45deg, rgba(8, 206, 255, 0.75), rgba(8, 24, 255, 0.75));
+  border-radius: 8px;
+  opacity: 0;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
+  transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
+}
+
+.islands__card-info-title {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 1.2em;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.7rem;
+}
+
+.islands__card-info-list {
+  margin: 0 auto;
+  width: 70%;
+  list-style: none;
+}
+
+.islands__card-info-list-item {
+  padding: 1em;
+  border-bottom: 1px solid #eee;
+}
+
+.islands__card-info-list-item:last-child {
+  border-bottom: none;
+}
+
+.islands__card-info-btn {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 2em;
+  padding: 1em;
+  border-radius: 8px;
+  width: 80%;
+  border: none;
+  background-color: #00ffaa;
+  cursor: pointer;
+}
+
+.islands__card-info-btn::before {
+  background-color: #0fe29c;
 }
 
 @media (min-width: 576px) {
@@ -406,6 +539,20 @@ body {
   .hero-img__text {
     font-size: 2.2rem;
   }
+  .islands__cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .islands__card {
+    margin: 1em;
+    width: 45%;
+  }
 }
 
 @media (min-width: 992px) {
@@ -456,6 +603,12 @@ body {
   .hero-img hr {
     width: 60%;
     max-width: 900px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .islands__card {
+    width: 30%;
   }
 }
 /*# sourceMappingURL=main.css.map */
